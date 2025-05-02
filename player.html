@@ -590,7 +590,7 @@
                     type: 'hls',
                     pic: 'https://img.picgo.net/2025/04/12/image362e7d38b4af4a74.png', // 设置视频封面图
                     customType: {
-                        hls: function(video, player) {
+                        customHls: function(video, player) {
                             // 清理之前的HLS实例
                             if (currentHls && currentHls.destroy) {
                                 try {
