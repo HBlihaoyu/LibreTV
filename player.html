@@ -587,8 +587,11 @@
                 ],
                 video: {
                     url: videoUrl,
-                    type: 'customHls',
+                    type: 'hls',
                     pic: 'https://img.picgo.net/2025/04/12/image362e7d38b4af4a74.png', // 设置视频封面图
+                    pluginOptions: {
+                        hls: hlsConfig,
+                    },
                     customType: {
                         customHls: function(video, player) {
                             // 清理之前的HLS实例
@@ -1032,7 +1035,7 @@
                 try {
                     dp.switchVideo({
                         url: url,
-                        type: 'customHls'
+                        type: 'hls'
                     });
                     
                     // 确保播放开始
