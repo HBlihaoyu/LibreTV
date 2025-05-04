@@ -1052,6 +1052,7 @@
             updateButtonStates();
             renderEpisodes();
             // 更新title
+            const title = urlParams.get('title');
             const currentVideoTitle = `${title} 第${currentEpisodeIndex+1}集` || localStorage.getItem('currentVideoTitle') || '未知视频';
             document.title = currentVideoTitle + ' - LibreTV播放器';
             document.getElementById('videoTitle').textContent = currentVideoTitle;
