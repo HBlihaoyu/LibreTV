@@ -338,8 +338,8 @@
             const episodesList = urlParams.get('episodes'); // 新增：从URL获取集数信息
 
             // 从localStorage获取数据
-            currentVideoTitle = title || localStorage.getItem('currentVideoTitle') || '未知视频';
             currentEpisodeIndex = index;
+            currentVideoTitle = `${title} 第${currentEpisodeIndex+1}集` || localStorage.getItem('currentVideoTitle') || '未知视频';
             
             // 设置自动连播开关状态
             autoplayEnabled = localStorage.getItem('autoplayEnabled') !== 'false'; // 默认为true
