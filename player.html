@@ -339,7 +339,7 @@
 
             // 从localStorage获取数据
             currentEpisodeIndex = index;
-            currentVideoTitle = `${title} 第${currentEpisodeIndex+1}集` || localStorage.getItem('currentVideoTitle') || '未知视频';
+            currentVideoTitle = `${title}` || localStorage.getItem('currentVideoTitle') || '未知视频';
             
             // 设置自动连播开关状态
             autoplayEnabled = localStorage.getItem('autoplayEnabled') !== 'false'; // 默认为true
@@ -1032,11 +1032,6 @@
                         url: url,
                         type: 'hls'
                     });
-                    // 更新title
-                    const title = urlParams.get('title');
-                    const currentVideoTitle = `${title} 第${currentEpisodeIndex+1}集` || localStorage.getItem('currentVideoTitle') || '未知视频';
-                    document.title = currentVideoTitle + ' - LibreTV播放器';
-                    document.getElementById('videoTitle').textContent = currentVideoTitle;
                     
                     // 确保播放开始
                     const playPromise = dp.play();
