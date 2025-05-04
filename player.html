@@ -1051,7 +1051,10 @@
             updateEpisodeInfo();
             updateButtonStates();
             renderEpisodes();
-
+            // 更新title
+            const currentVideoTitle = `${title} 第${currentEpisodeIndex+1}集` || localStorage.getItem('currentVideoTitle') || '未知视频';
+            document.title = currentVideoTitle + ' - LibreTV播放器';
+            document.getElementById('videoTitle').textContent = currentVideoTitle;
             // 重置用户点击位置记录
             userClickedPosition = null;
             
